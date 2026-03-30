@@ -7,13 +7,13 @@ Official project page (from the paper): *Learning street view representations ba
 
 
 <p align="center">
-  <img src="assets/fig1_framework.jpg" width="600" alt="Spatiotemporal contrastive learning framework (Fig. 1)" />
+  <img src="assets/fig1_framework.jpg" width="500" alt="Spatiotemporal contrastive learning framework (Fig. 1)" />
   <br/>
   <em>Fig. 1. Spatiotemporal contrastive learning framework.</em>
 </p>
 
 <p align="center">
-  <img src="assets/fig2_strategies.jpg" width="600" alt="Strategy implementation diagram (Fig. 2)" />
+  <img src="assets/fig2_strategies.jpg" width="900" alt="Strategy implementation diagram (Fig. 2)" />
   <br/>
   <em>Fig. 2. Strategy implementation diagram.</em>
 </p>
