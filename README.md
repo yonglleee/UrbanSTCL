@@ -2,23 +2,9 @@
 
 This folder contains code used for **UrbanSTCL** experiments (pretraining + downstream tasks + analysis utilities) inside the `svpretrain` workspace.
 
-## Paper
 
-This workspace corresponds to the paper:
+Official project page (from the paper): *Learning street view representations based on a spatiotemporal contrastive learning framework*
 
-- **Title**: *Learning street view representations based on a spatiotemporal contrastive learning framework*
-- **Venue**: *Computers, Environment and Urban Systems*, Volume 125 (2026), Article 102393
-- **DOI**: `10.1016/j.compenvurbsys.2025.102393`
-- **DOI link**: https://doi.org/10.1016/j.compenvurbsys.2025.102393
-- **Authors**: Yong Li, Yingjing Huang, Fan Zhang
-
-Official project page (from the paper): https://github.com/yonglleee/UrbanSTCL
-
-## Figures
-
-Figures used in this README are stored under `UrbanSTCL/assets/`.
-
-GitHub-flavored Markdown does not support setting image width directly, so we use HTML.
 
 <p align="center">
   <img src="assets/fig1_framework.jpg" width="600" alt="Spatiotemporal contrastive learning framework (Fig. 1)" />
@@ -105,28 +91,6 @@ cd UrbanSTCL/pretrain
 bash train.sh
 ```
 
-### Outputs
-
-- Checkpoints are saved to the current working directory as `checkpoint_*.pth.tar`.
-- TensorBoard logs are written to the default `runs/` directory.
-
-## Linear evaluation
-
-`pretrain/main_lincls.py` runs linear classification on frozen features.
-
-```bash
-cd UrbanSTCL/pretrain
-
-python main_lincls.py \
-  -a vit_small --lr 3 \
-  --dist-url 'tcp://localhost:10001' \
-  --multiprocessing-distributed --world-size 1 --rank 0 \
-  --pretrained /path/to/checkpoint_XXXX.pth.tar \
-  /path/to/IMAGENET_ROOT
-```
-
-More reference commands are in `pretrain/CONFIG.md`.
-
 ## Feature extraction on custom pickled metadata
 
 For some downstream analyses, this workspace includes a feature extractor that:
@@ -143,10 +107,6 @@ Pretrained checkpoints are shared via Baidu Netdisk:
 
 - Link: https://pan.baidu.com/s/1X3m6-TdM_s76HKKbklLrRQ?pwd=jyd8
 - Code: `jyd8`
-
-Recommended local placement (not tracked by git):
-
-- Put downloaded checkpoint files under `UrbanSTCL/weights/`.
 
 You can use the same checkpoint file for:
 
@@ -242,16 +202,3 @@ See `LICENSE` in this folder.
   doi     = {10.1016/j.compenvurbsys.2025.102393}
 }
 ```
-
-If you use the MoCo v3-style pretraining code, please consider citing MoCo v3:
-
-```bibtex
-@Article{chen2021mocov3,
-  author  = {Xinlei Chen* and Saining Xie* and Kaiming He},
-  title   = {An Empirical Study of Training Self-Supervised Vision Transformers},
-  journal = {arXiv preprint arXiv:2104.02057},
-  year    = {2021},
-}
-```
-
-The place recognition downstream task code is based on the GSV-Cities repository; please see its README for the appropriate citation.
